@@ -7,3 +7,5 @@ services:
     entrypoint: /bin/bash /app/entrypoint.sh
     volumes:
       - "./node/app:/app"
+    ports:
+      - "8080:8080"
