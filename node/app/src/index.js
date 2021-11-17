@@ -9,7 +9,7 @@ function component() {
   btn.onclick = printMe;
 
   const element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack', '!!!12'], ' ');
+  element.innerHTML = _.join(['Hello', 'webpack', '!!!123'], ' ');
   element.appendChild(btn);
   return element;
 }
