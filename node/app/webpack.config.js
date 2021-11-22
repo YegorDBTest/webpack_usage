@@ -30,26 +30,16 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: {
-    index: {
-      import: './src/index.js',
-      dependOn: 'shared',
-    },
-    another: {
-      import: './src/another-module.js',
-      dependOn: 'shared',
-    },
-    shared: 'lodash',
+    index: './src/index.js',
+    another: './src/another-module.js',
   },
   output: {
-    filename: 'main.js',
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
-    // If we're going to use multiple entry points on a single HTML page,
-    // optimization.runtimeChunk: 'single' is needed,
-    // otherwise we could get into trouble.
-    // https://bundlers.tooling.report/code-splitting/multi-entry/
-    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
