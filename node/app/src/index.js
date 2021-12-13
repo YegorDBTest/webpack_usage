@@ -1,12 +1,5 @@
-async function getComponent() {
-  const element = document.createElement('div');
-  const { default: _ } = await import('lodash');
+import './index.css';
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  return element;
-}
-
-
-getComponent().then((component) => {
-  document.body.appendChild(component);
-});
+let element = document.createElement('h1');
+element.innerHTML = ['Hello', 'webpack'].join(' ');
+document.body.appendChild(element);
